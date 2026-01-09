@@ -1,5 +1,4 @@
 🌐 Linux VM Home Lab with Docker, Tailscale, NGINX & Nextcloud
-A clean bullet‑point version of your README
 
 🚀 Overview
 - Fully self‑hosted personal cloud environment inside an Ubuntu VM
