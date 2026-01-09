@@ -1,124 +1,30 @@
-🌐 Linux VM Home Lab — Ubuntu + Docker + Tailscale + NGINX + Nextcloud
+🌐 Linux VM Home Lab with Docker, Tailscale, NGINX, and Nextcloud
 
-A fully self‑hosted personal cloud environment running inside an Ubuntu virtual machine. This lab demonstrates secure remote access, reverse proxying, container orchestration, and private cloud hosting — perfect for showcasing modern homelab and DevOps skills.
+This project sets up a fully self-hosted personal cloud environment inside an Ubuntu virtual machine. It demonstrates secure remote access, container orchestration, reverse proxying, and private cloud hosting using modern DevOps tools.
 
-🚀 Overview
+Features
 
-This project runs on:
+Ubuntu Linux VM as the base operating system
 
-Host Machine: Physical or hypervisor-based system running the Linux VM
+Docker containers for Tailscale, NGINX, and Nextcloud
 
-Ubuntu Linux VM: Base OS for Docker stack
+Tailscale mesh VPN for secure remote access without exposing your home network
 
-Docker: Container runtime
+NGINX reverse proxy with TLS termination for secure HTTPS access
 
-Tailscale: Secure remote access via mesh VPN
+Nextcloud personal cloud server for file storage and collaboration
 
-NGINX Reverse Proxy: Routing and TLS termination
+Architecture Overview
 
-Nextcloud: Personal cloud server
+Host machine runs the Ubuntu VM
 
-The setup allows you to securely access your Nextcloud instance from anywhere using a Tailscale tunnel — without exposing your home network to the public internet.
+Ubuntu VM runs Docker containers
 
-🧱 Architecture
+Tailscale container creates a secure mesh VPN tunnel
 
-Components
+NGINX container handles reverse proxy and HTTPS
 
-Layer
-
-Technology
-
-Purpose
-
-Host Machine
-
-Linux OS
-
-Runs the Ubuntu VM
-
-Virtual Machine
-
-Ubuntu Linux
-
-Base OS for Docker stack
-
-Container 1
-
-Tailscale
-
-Creates secure mesh VPN tunnel
-
-Container 2
-
-NGINX
-
-Reverse proxy + HTTPS
-
-Container 3
-
-Nextcloud
-
-Personal cloud server
-
-🔐 Remote Access Flow
-
-A remote client connects through Tailscale, joins your private mesh network, and securely reaches your Nextcloud server through NGINX inside the VM.
-
-📁 GitHub Repo Structure
-
-linux-vm-home-lab/
-├── README.md
-├── docker-compose.yml
-├── .gitignore
-├── .dockerignore
-├── /diagrams/
-│   └── network-architecture.png
-├── /tailscale/
-│   └── config/
-├── /nginx/
-│   ├── conf.d/
-│   │   └── nextcloud.conf
-│   └── certs/
-├── /nextcloud/
-│   └── data/
-└── /scripts/
-    └── init.sh
-
-🐳 Docker Compose Example
-
-version: "3.9"
-
-services:
-  tailscale:
-    image: tailscale/tailscale
-    container_name: tailscale
-    network_mode: host
-    volumes:
-      - ./tailscale:/var/lib/tailscale
-    cap_add:
-      - NET_ADMIN
-    restart: unless-stopped
-
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx/certs:/etc/nginx/certs
-    depends_on:
-      - nextcloud
-    restart: unless-stopped
-
-  nextcloud:
-    image: nextcloud
-    container_name: nextcloud
-    volumes:
-      - ./nextcloud:/var/www/html
-    restart: unless-stopped
-
+Nextcloud container provides cloud storage services
 
 💼 Skills Highlighted:
 
