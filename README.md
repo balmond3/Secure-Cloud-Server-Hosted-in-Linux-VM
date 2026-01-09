@@ -1,41 +1,37 @@
-🌐 Linux VM Home Lab with Docker, Tailscale, NGINX, and Nextcloud
+🌐 Linux VM Home Lab with Docker, Tailscale, NGINX & Nextcloud
+A clean bullet‑point version of your README
 
-This project sets up a fully self-hosted personal cloud environment inside an Ubuntu virtual machine. It demonstrates secure remote access, container orchestration, reverse proxying, and private cloud hosting using modern DevOps tools.
+🚀 Overview
+- Fully self‑hosted personal cloud environment inside an Ubuntu VM
+- Demonstrates secure remote access, container orchestration, reverse proxying, and private cloud hosting
+- Built using modern DevOps tools and best practices
 
-Features
+🧩 Features
+- Ubuntu Linux VM as the base OS
+- Docker containers for:
+- Tailscale
+- NGINX
+- Nextcloud
+- Tailscale mesh VPN for secure remote access without exposing your home network
+- NGINX reverse proxy with TLS termination for secure HTTPS access
+- Nextcloud personal cloud server for file storage and collaboration
 
-Ubuntu Linux VM as the base operating system
+🏗️ Architecture Overview
+- Host machine runs the Ubuntu VM
+- Ubuntu VM runs all Docker containers
+- Tailscale container:
+- Creates a secure mesh VPN tunnel
+- NGINX container:
+- Handles reverse proxying
+- Provides HTTPS via TLS termination
+- Nextcloud container:
+- Provides cloud storage and collaboration services
 
-Docker containers for Tailscale, NGINX, and Nextcloud
+🛠️ Skills Highlighted
+- Virtualization
+- Secure networking
+- Docker containerization
+- Reverse proxying
+- Self‑hosted cloud services
+- Architecture documentation
 
-Tailscale mesh VPN for secure remote access without exposing your home network
-
-NGINX reverse proxy with TLS termination for secure HTTPS access
-
-Nextcloud personal cloud server for file storage and collaboration
-
-Architecture Overview
-
-Host machine runs the Ubuntu VM
-
-Ubuntu VM runs Docker containers
-
-Tailscale container creates a secure mesh VPN tunnel
-
-NGINX container handles reverse proxy and HTTPS
-
-Nextcloud container provides cloud storage services
-
-💼 Skills Highlighted:
-
-Virtualization
-
-Secure networking
-
-Docker containerization
-
-Reverse proxying
-
-Self‑hosted cloud services
-
-Architecture documentation
