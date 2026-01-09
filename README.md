@@ -7,7 +7,7 @@
 
 🧩 Features
 - Ubuntu Linux VM as the base OS
-- Docker containers for:
+- Docker for containing applications
 - Tailscale
 - NGINX
 - Nextcloud
@@ -33,4 +33,5 @@
 - Reverse proxying
 - Self‑hosted cloud services
 - Architecture documentation
+- Linux System Administration
 
